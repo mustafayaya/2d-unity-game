@@ -3,4 +3,4 @@ Part 2 of my adventure in learning game development. It's my first project worki
 
 ### Credits
 * Game Assets
-  * (Ansimuz)[https://ansimuz.itch.io/sunny-land-pixel-game-art]
+  * [Ansimuz](https://ansimuz.itch.io/sunny-land-pixel-game-art)
