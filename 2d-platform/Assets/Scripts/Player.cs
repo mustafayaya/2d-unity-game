@@ -60,6 +60,9 @@ public class Player : MonoBehaviour {
          } else if(Other.collider.gameObject.tag == "gem") {
          	score += 10;
          	Destroy(Other.gameObject);
+         } else if(Other.collider.gameObject.tag == "gem") {
+         	score += 10;
+         	Destroy(Other.gameObject);
          }
     }
 }
