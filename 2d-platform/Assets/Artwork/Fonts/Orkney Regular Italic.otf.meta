@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: eb552f6657f404db5af2a40ff0eaaafa
+timeCreated: 1531209016
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Orkney
+  fontNames:
+  - Orkney
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: da51d8609badb4ba4b2033c865b6c46f, type: 3}
+  - {fileID: 12800000, guid: 313cb6018179e464eba56b470e1d9ace, type: 3}
+  - {fileID: 12800000, guid: 2f9e0f044097e4362ac3811149904db5, type: 3}
+  - {fileID: 12800000, guid: 272043655083440adb0242af70f14755, type: 3}
+  - {fileID: 12800000, guid: 208ff7e65a3d34c4eaac5f3426629ca0, type: 3}
+  - {fileID: 12800000, guid: 87e0d40747e9a47a78d9b89526d43c4f, type: 3}
+  - {fileID: 12800000, guid: a4b6c26902a8a4e028dcde9725856984, type: 3}
+  - {fileID: 12800000, guid: d00178999f8d34f73b41f5882d3aa6ea, type: 3}
+  - {fileID: 12800000, guid: 560d76b9339eb402e81c8ca23174146c, type: 3}
+  - {fileID: 12800000, guid: c417a5d99ea9042249d54305627f2c50, type: 3}
+  - {fileID: 12800000, guid: 06025f3b4e58c4045b608c9744c1a628, type: 3}
+  - {fileID: 12800000, guid: 8d15447b496f14322a56364cb34da00c, type: 3}
+  - {fileID: 12800000, guid: c019b34c81d8e4bbf8a4ea9916dc346c, type: 3}
+  - {fileID: 12800000, guid: 60a261de979304e5b9394d11f08a8efb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

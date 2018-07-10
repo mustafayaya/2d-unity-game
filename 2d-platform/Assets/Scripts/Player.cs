@@ -8,12 +8,15 @@ public class Player : MonoBehaviour {
 	private float velocity = 20f;
 	private int health;
 	private int score;
+	public float left;
+    public float right;
+    public float top;
 
 	// Use this for initialization
 	void Start() {
 		animator.SetBool("Grounded", true);
 		score = PlayerPrefs.GetInt("Score", 0);
-		health = 20;
+		health = 50;
 	}
 
 	public int getHealth(){
@@ -43,6 +46,16 @@ public class Player : MonoBehaviour {
 			animator.SetTrigger("Idle");
 		}
 
+		if(transform.position.x <= left) {
+			transform.position = new Vector3(left, transform.position.y, transform.position.z);
+		}
+		if(transform.position.x >= right) {
+			transform.position = new Vector3(right, transform.position.y, transform.position.z);
+		}
+		if(transform.position.y >= top) {
+			transform.position = new Vector3(transform.position.x, top, transform.position.z);
+		}
+
 		if(health <= 0) {
 			PlayerPrefs.DeleteAll();
 			FindObjectOfType<GameManager>().endGame();
@@ -54,19 +67,22 @@ public class Player : MonoBehaviour {
          if (Other.collider.gameObject.tag == "platform") {
             animator.SetBool("Grounded", true);
          } else if(Other.collider.gameObject.tag == "cherry") {
-         	score += 1;
-         	Destroy(Other.gameObject);
+         	score += 5;
+         	Other.gameObject.GetComponent<Animator>().SetTrigger("ItemCaught");
+         	Destroy(Other.gameObject, 0.2f);
          } else if(Other.collider.gameObject.tag == "gem") {
          	score += 10;
-         	Destroy(Other.gameObject);
+         	Other.gameObject.GetComponent<Animator>().SetTrigger("ItemCaught");
+         	Destroy(Other.gameObject, 0.2f);
          } else if(Other.collider.gameObject.tag == "house") {
          	PlayerPrefs.SetInt("Score", score);
          } else if (Other.collider.gameObject.tag == "enemy"){
          	if(Other.collider.GetType() == typeof(BoxCollider2D)) {
          		health -= 10;
          	} else if(Other.collider.GetType() == typeof(CircleCollider2D)){
-         		score += 5;
-         		Destroy(Other.gameObject);
+         		score += 15;
+         		Other.gameObject.GetComponent<Animator>().SetTrigger("EnemyDeath");
+         		Destroy(Other.gameObject, 0.5f);
      		}
          } 
     }

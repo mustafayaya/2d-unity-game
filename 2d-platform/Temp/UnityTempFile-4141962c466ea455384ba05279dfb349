@@ -155,13 +155,12 @@
 -define:UNITY_EDITOR_LINUX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
-Assets/QuitGame.cs
 Assets/Scripts/CameraControl.cs
 Assets/Scripts/EndLevel.cs
 Assets/Scripts/GameManager.cs
 Assets/Scripts/NextLevel.cs
 Assets/Scripts/Player.cs
-Assets/Scripts/Quit.cs
+Assets/Scripts/QuitGame.cs
 Assets/Scripts/Score.cs
 -r:/home/luiza/unity-editor-2017.2.0xb6Linux/Editor/Data/Mono/lib/mono/unity/System.Runtime.Serialization.dll
 -r:/home/luiza/unity-editor-2017.2.0xb6Linux/Editor/Data/Mono/lib/mono/unity/System.Xml.Linq.dll

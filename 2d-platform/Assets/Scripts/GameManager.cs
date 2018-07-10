@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	public void endGame() {
 		if(!gameEnded) {
 			gameEnded = true;
+			endLevel.SetActive(true);
 			Invoke("restart", 2f);
 		}
 	}
