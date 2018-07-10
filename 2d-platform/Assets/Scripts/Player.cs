@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		animator.SetBool("Grounded", true);
-		score = 0;
+		score = PlayerPrefs.GetInt("Score", 0);
 		health = 20;
 	}
 
@@ -26,8 +26,6 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-		Debug.Log(score);
 
 		if(Input.GetKeyDown("d") || Input.GetKey("d")){
 		    rb.AddForce(Vector2.right * velocity);
@@ -46,6 +44,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if(health <= 0) {
+			PlayerPrefs.DeleteAll();
 			FindObjectOfType<GameManager>().endGame();
 		}
 
@@ -60,9 +59,15 @@ public class Player : MonoBehaviour {
          } else if(Other.collider.gameObject.tag == "gem") {
          	score += 10;
          	Destroy(Other.gameObject);
-         } else if(Other.collider.gameObject.tag == "gem") {
-         	score += 10;
-         	Destroy(Other.gameObject);
-         }
+         } else if(Other.collider.gameObject.tag == "house") {
+         	PlayerPrefs.SetInt("Score", score);
+         } else if (Other.collider.gameObject.tag == "enemy"){
+         	if(Other.collider.GetType() == typeof(BoxCollider2D)) {
+         		health -= 10;
+         	} else if(Other.collider.GetType() == typeof(CircleCollider2D)){
+         		score += 5;
+         		Destroy(Other.gameObject);
+     		}
+         } 
     }
 }

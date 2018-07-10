@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\NextLevel.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>/home/luiza/unity-editor-2017.2.0xb6Linux/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>

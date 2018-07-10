@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void restart() {
+		gameEnded = false;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 	
