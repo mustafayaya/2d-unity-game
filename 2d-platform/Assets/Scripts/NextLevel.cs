@@ -9,6 +9,10 @@ public class NextLevel : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
 	}
 
+	public void gameOver() {
+		FindObjectOfType<GameManager>().endGame();
+	}
+
 	// Use this for initialization
 	void Start () {
 		

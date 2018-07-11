@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	private bool gameEnded;
 	public GameObject endLevel;
+	public GameObject gameOver;
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +21,13 @@ public class GameManager : MonoBehaviour {
 	public void endGame() {
 		if(!gameEnded) {
 			gameEnded = true;
-			endLevel.SetActive(true);
-			Invoke("restart", 2f);
+			gameOver.SetActive(true);
+			Invoke("restart", 0.85f);
 		}
 	}
 
 	public void restart() {
+		gameOver.SetActive(false);
 		gameEnded = false;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}

@@ -11,6 +11,11 @@ public class Player : MonoBehaviour {
 	public float left;
     public float right;
     public float top;
+    public float bottom;
+    public AudioSource a1;
+    public AudioSource a2;
+    public AudioSource a3;
+
 
 	// Use this for initialization
 	void Start() {
@@ -46,7 +51,7 @@ public class Player : MonoBehaviour {
 			animator.SetTrigger("Idle");
 		}
 
-		if(transform.position.x <= left) {
+		/*if(transform.position.x <= left) {
 			transform.position = new Vector3(left, transform.position.y, transform.position.z);
 		}
 		if(transform.position.x >= right) {
@@ -54,9 +59,9 @@ public class Player : MonoBehaviour {
 		}
 		if(transform.position.y >= top) {
 			transform.position = new Vector3(transform.position.x, top, transform.position.z);
-		}
+		}*/
 
-		if(health <= 0) {
+		if(health <= 0 || transform.position.y <= bottom) {
 			PlayerPrefs.DeleteAll();
 			FindObjectOfType<GameManager>().endGame();
 		}
@@ -70,19 +75,23 @@ public class Player : MonoBehaviour {
          	score += 5;
          	Other.gameObject.GetComponent<Animator>().SetTrigger("ItemCaught");
          	Destroy(Other.gameObject, 0.2f);
+         	a2.Play();
          } else if(Other.collider.gameObject.tag == "gem") {
          	score += 10;
          	Other.gameObject.GetComponent<Animator>().SetTrigger("ItemCaught");
          	Destroy(Other.gameObject, 0.2f);
+         	a2.Play();
          } else if(Other.collider.gameObject.tag == "house") {
          	PlayerPrefs.SetInt("Score", score);
          } else if (Other.collider.gameObject.tag == "enemy"){
          	if(Other.collider.GetType() == typeof(BoxCollider2D)) {
+         		a3.Play();
          		health -= 10;
          	} else if(Other.collider.GetType() == typeof(CircleCollider2D)){
          		score += 15;
          		Other.gameObject.GetComponent<Animator>().SetTrigger("EnemyDeath");
          		Destroy(Other.gameObject, 0.5f);
+         		a1.Play();
      		}
          } 
     }
